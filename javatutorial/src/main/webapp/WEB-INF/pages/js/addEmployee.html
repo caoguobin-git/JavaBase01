@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        添加员工</title>
+    <script rel="script" type="text/javascript" src="jquery-3.4.1.js"></script>
+</head>
+<body>
+<table id="employee-table">
+    <tr>
+    <th>员工ID</th>
+    <th>员工姓名</th>
+    <th>员工工资</th>
+    </tr>
+</table>
+ID:<input id="employee-id"> NAME:<input id="employee-name"> SAL:<input id="employee-sal">
+<button id="add-employee-tbn">添加</button>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#add-employee-tbn").click(addEmployee)
+    })
+    function addEmployee() {
+        var id=$("#employee-id").val()
+        var name=$("#employee-name").val()
+        var sal=$("#employee-sal").val()
+        if (id==null||name==null||sal==null||id==""){
+            alert("数据不能为空")
+            return;
+        }
+        var tds=$("tr>td:nth-child(1)")
+        $.each(tds,function (index,item) {
+            console.log($(item).text())
+            if ($(item).text()==id){
+                alert("id不能重复");
+                return;
+            }
+        })
+        var tr=$("<tr><td>"+id+"</td><td>"+name+"</td><td>"+sal+"</td></tr>")
+        $("#employee-table").append(tr)
+    }
+</script>

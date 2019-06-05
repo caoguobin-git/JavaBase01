@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Title</title>
+    <script src="jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<select id="prov"></select>
+<select id="city"></select>
+</body>
+</html>
+<script>
+    var data = {
+        "北京市": ["海淀区","朝阳区","丰台区"],
+        "河北省": ["石家庄","唐山","秦皇岛"],
+        "辽宁省": ["沈阳","大连","鞍山"],
+        "山东省": ["青岛","济南","烟台"]
+    }
+    $(function () {
+        initProv()
+        initCitys()
+        $("#prov").on("input change",initCitys)
+    })
+
+    function initCitys() {
+        var prov=$("#prov").val()
+        var citys=data[prov]
+        $("#city").html("<option>--选择城市--</option>")
+        $.each(citys,function (key,value) {
+            var city=$("<option>"+value+"</option>")
+            $("#city").append(city)
+        })
+    }
+    function initProv() {
+        $.each(data,function (key) {
+            var provOption=$("<option>"+key+"</option>")
+            $("#prov").append(provOption)
+        })
+    }
+</script>

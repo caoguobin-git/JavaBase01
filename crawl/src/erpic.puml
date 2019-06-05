@@ -1,0 +1,8 @@
+@startuml
+rectangle user
+rectangle haha
+(id)-user
+(password)-user
+(birthday)-user
+
+@enduml

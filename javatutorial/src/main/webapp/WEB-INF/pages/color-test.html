@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Title</title>
+    <link type="text/css"
+          rel="stylesheet"
+          href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script type="text/javascript"
+            src="../js/jquery-3.4.1.js"></script>
+    <style>
+        .col-lg-6 {
+            height: 500px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6"></div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    $(function () {
+       hello()
+    })
+    function hello() {
+        setInterval(function () {
+            var random=Math.random();
+            if (random>0.66){
+                $(".col-lg-6").css({
+                    "background":"red",
+                    "transition-delay":"0s",
+                    "transition-duration": "2s"
+                })
+            } else if (random>0.33){
+                $(".col-lg-6").css({
+                    "background":"blue",
+                    "transition-delay":"0s",
+                    "transition-duration": "2s"
+                })
+            } else {
+                $(".col-lg-6").css({
+                    "background":"gray",
+                    "transition-delay":"0s",
+                    "transition-duration": "2s"
+                })
+            }
+        },3000)
+    }
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        计算器</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        td{
+            border: 1px solid black;
+            padding: 5px 8px;
+            font-weight: bolder;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<input id="values">
+<table>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>/</td>
+
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>*</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>.</td>
+        <td>=</td>
+        <td>+</td>
+    </tr>
+</table>
+
+</body>
+</html>
+<script>
+    $(function () {
+        $("td").click(appendValue)
+    })
+    function appendValue() {
+        var td=$(this)
+        var append=td.html()
+        var pre=$("#values").val()
+        $("#values").val(pre+append)
+        console.log(eval($("#values").val()))
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        DOMTest</title>
+    <script type="text/javascript" rel="script" src="../js/jquery-3.4.1.js"></script>
+    <style>
+        #parent-div{
+            width: 1000px;
+            height: 300px;
+            background: pink;
+        }
+        #parent-div div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="parent-div">
+
+</div>
+<button id="addNode" onclick="addNode()">添加</button>
+<button id="removeNode" onclick="removeNode()">删除</button>
+<button id="showOrHide" onclick="showOrHide()">显示/隐藏</button>
+</body>
+</html>
+<script>
+    var flag=true;
+    function showOrHide() {
+        // $("#parent-div").slideToggle(1000,showOrHide)
+        if (flag){
+        $("#parent-div").fadeOut(1000)
+        }else {
+            $("#parent-div").fadeIn(1000)
+        }
+        flag=!flag;
+    }
+    function removeNode() {
+        var parent = document.getElementById("parent-div");
+        var childNodes = parent.childNodes;
+        parent.removeChild(childNodes[childNodes.length-1])
+        console.log(childNodes)
+    }
+    function addNode() {
+        var htmlDivElement = document.createElement("div");
+        var parent = document.getElementById("parent-div");
+        parent.appendChild(htmlDivElement)
+    }
+</script>
