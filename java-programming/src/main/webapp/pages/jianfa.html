@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Title</title>
+    <script rel="script"
+            type="text/javascript"
+            src="jquery-3.4.1.js"></script>
+</head>
+<body>
+<span id="number-1"></span>-<span
+        id="number-2"></span>=<input
+        id="answer-upload">
+<button id="confirm-answer">
+    提交
+</button>
+<br/>
+<span id="answer"></span>
+
+</body>
+</html>
+<script>
+    $(function () {
+        $("#confirm-answer").click(checkAnswer)
+        createRandom()
+    })
+
+    function checkAnswer() {
+        var num1 = $("#number-1").html()
+        var num2 = $("#number-2").html()
+        var answer = $("#answer-upload").val()
+        if (answer == num1 - num2) {
+            $("#answer").html("答对了")
+        } else {
+            $("#answer").html("答错了：" + num1 + "-" + num2 + "=" + (num1 - num2))
+        }
+        createRandom()
+    }
+
+    function createRandom() {
+        var num1 = (Math.random() * 20).toFixed(0);
+        var num2 = (Math.random() * 20).toFixed(0);
+        $("#number-1").html(parseInt(num1) > parseInt(num2) ? num1 : num2)
+        $("#number-2").html(parseInt(num1) > parseInt(num2) ? num2 : num1)
+        $("#answer-upload").val("")
+    }
+</script>
