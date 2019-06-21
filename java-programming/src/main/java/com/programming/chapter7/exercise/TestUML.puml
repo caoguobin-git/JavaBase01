@@ -1,0 +1,25 @@
+@startuml
+class hello{
+    channel:int
+    public hello(double radius){this.radius=radius}
+    private void getRadius(){return radius}
+    turnOn():void
+}
+
+class TV{
+    channel:int
+    volumeLevel:int
+    on:boolean
+    TV()
+    turnOn():void
+    turnOff():void
+}
+
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+
+
+@enduml
