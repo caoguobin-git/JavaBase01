@@ -7,6 +7,7 @@
 
 package com.programming.chapter11.exercise;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +20,8 @@ public class Exercise11_17 {
         int n = scanner.nextInt();
         int result = display(n);
         System.out.println(result);
+
+        File file=new File("e:/hello.txt");
     }
 
     private static int display(int n) {
