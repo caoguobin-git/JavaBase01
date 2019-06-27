@@ -12,9 +12,12 @@ import java.util.Scanner;
 public class exercise2_2 {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
+        System.out.print("Enter the radius and length of a cylinder: ");
         double radius=input.nextDouble();
         double height=input.nextDouble();
-        double volume=radius*radius*Math.PI*height;
-        System.out.println(volume);
+        double area=radius*radius*Math.PI;
+        double volume=area*height;
+        System.out.printf("The area is %.1f\n",area);
+        System.out.printf("The volume is %.1f",volume);
     }
 }

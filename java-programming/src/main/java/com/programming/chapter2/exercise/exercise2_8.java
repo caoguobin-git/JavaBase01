@@ -7,5 +7,13 @@
 
 package com.programming.chapter2.exercise;
 
+import java.util.Scanner;
+
 public class exercise2_8 {
+    public static void main(String[] args) {
+//        int n=new Scanner(System.in).nextInt();
+//        System.out.println((char)n);
+        double result =Math.sqrt(12);
+        System.out.println(result);
+    }
 }

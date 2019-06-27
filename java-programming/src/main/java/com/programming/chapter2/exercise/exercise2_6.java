@@ -11,17 +11,20 @@ import java.util.Scanner;
 
 public class exercise2_6 {
     public static void main(String[] args) {
-        int a =new Scanner(System.in).nextInt();
-        int sum=0;
-//        String s = String.valueOf(a);
-//        for (int i=0;i<s.length();i++){
-//            sum+=Integer.parseInt(String.valueOf(s.charAt(i)));
-//        }
+       Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter a number between 0 and 1000: ");
+       int n=scanner.nextInt();
+       int result =jisuan(n);
+        System.out.println("The sum of the digits is "+result);
 
-        while (a>0){
-            sum+=a%10;
-            a=a/10;
+    }
+
+    private static int jisuan(int n) {
+        int sum=0;
+        while (n>0){
+            sum+=n%10;
+            n/=10;
         }
-        System.out.println(sum);
+        return sum;
     }
 }

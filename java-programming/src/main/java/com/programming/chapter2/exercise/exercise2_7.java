@@ -11,10 +11,14 @@ import java.util.Scanner;
 
 public class exercise2_7 {
     public static void main(String[] args) {
-        long minute=new Scanner(System.in).nextLong();
-        long totalYear=minute/(365*24*60);
-        long totalDay=(minute-totalYear*365*24*60)/(24*60);
-        System.out.println(totalYear);
-        System.out.println(totalDay);
+        final long MINUTES_OF_DAY=24*60;
+        final long MINUTES_OF_YEAR=365*MINUTES_OF_DAY;
+        System.out.println("Enter the number of minutes: ");
+        Scanner scanner=new Scanner(System.in);
+        long minutes=scanner.nextLong();
+        int year= (int) (minutes/MINUTES_OF_YEAR);
+        int day= (int) (minutes%MINUTES_OF_YEAR/MINUTES_OF_DAY);
+        System.out.println(minutes+" minutes is approximately "+year+" years and "+day+" days");
+
     }
 }

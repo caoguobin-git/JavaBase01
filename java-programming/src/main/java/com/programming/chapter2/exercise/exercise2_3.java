@@ -11,7 +11,10 @@ import java.util.Scanner;
 
 public class exercise2_3 {
     public static void main(String[] args) {
-        double feet=new Scanner(System.in).nextDouble();
-        System.out.println(feet*0.305);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a value for feet: ");
+        double feet = scanner.nextDouble();
+        double meters = feet * 0.305;
+        System.out.printf("%.1f feet is %.4f meters",feet,meters);
     }
 }

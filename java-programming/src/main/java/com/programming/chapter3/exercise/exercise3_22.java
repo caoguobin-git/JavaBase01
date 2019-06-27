@@ -10,6 +10,10 @@ public class exercise3_22 {
         Scanner scanner=new Scanner(System.in);
         double x=scanner.nextDouble();
         double y = scanner.nextDouble();
-        System.out.println("the point is"+(((Math.pow((Math.pow(x,2)+Math.pow(y, 2)),0.5))<10)?" ":" not ")+"in the circle");
+        System.out.println("the point is"+(isInTheCircle(x, y)?" ":" not ")+"in the circle");
+    }
+
+    private static boolean isInTheCircle(double x, double y) {
+        return Math.pow(Math.pow(x, 2)+Math.pow(y, 2), 0.5)<10;
     }
 }
